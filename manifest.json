@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Error Decoder - Private",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Decrypts right-click selected text by calling a URL. Developed for private use.",
     "permissions": [
         "contextMenus",
