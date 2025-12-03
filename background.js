@@ -131,7 +131,7 @@ const iifeInvokable = `
         maxWidth: '1000px',
         maxHeight: '300px',
         minHeight: '50px',
-        padding: '28px 14px 12px 14px',
+        padding: '0',
         background: 'white',
         color: '#111',
         border: '1px solid #ccc',
@@ -142,8 +142,22 @@ const iifeInvokable = `
         zIndex: '2147483647',
         display: 'flex',
         flexDirection: 'column',
-        overflow: 'auto',
+        overflow: 'hidden',
         whiteSpace: 'pre-wrap',
+    });
+
+    const header = document.createElement('div');
+    header.textContent = 'Error Decoder Response';
+    Object.assign(header.style, {
+        fontWeight: '600',
+        marginBottom: '0',
+        padding: '8px 32px 8px 12px',
+        borderBottom: '1px solid #eee',
+        position: 'sticky',
+        top: '0',
+        background: 'white',
+        borderTopLeftRadius: '8px',
+        borderTopRightRadius: '8px',
     });
 
     const closeBtn = document.createElement('button');
@@ -169,6 +183,7 @@ const iifeInvokable = `
     });
     bodyEl.textContent = extractedText;
 
+    container.appendChild(header);
     container.appendChild(closeBtn);
     container.appendChild(bodyEl);
     document.body.appendChild(container);
