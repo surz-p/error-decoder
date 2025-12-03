@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+      <style>
+        html, body {
+          height: 100%;
+          margin: 10px;
+        }
+        body {
+          background: url('icon.png') no-repeat center center;
+            background-size: clamp(200px, 50vw, 600px) auto; /* scales with viewport, capped between 200px and 800px */
+          font-family: sans-serif;
+        }
+      </style>
+    </head>
+  <body>
+    <label style="display:flex; align-items:center; margin-bottom:12px;">
+      <span style="min-width:320px;">Backend URL:</span>
+      <input id="url" type="text" style="width:400px; margin-left:16px;">
+    </label>
+    <label style="display:flex; align-items:center;">
+      <span style="min-width:320px;">Pop up display time (0 - 90 seconds only):</span>
+    <input id="popup" type="text" placeholder="default 15 seconds" style="width:400px; margin-left:16px;">
+    </label>
+    </br>
+    <label style="display:flex; align-items:center; margin-bottom:12px;">
+        <span style="min-width:320px;"></span>
+        <button id="save" style="width:410px; margin-left:16px;">Save</button>
+    </label>
+    <script src="options.js"></script>
+  </body>
+</html>
