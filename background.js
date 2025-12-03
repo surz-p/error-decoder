@@ -44,6 +44,14 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
                 },
                 body: params.toString(),
             });
+        }, (err) => {
+            if (tab && tab.id !== undefined) {
+                chrome.tabs.executeScript(tab.id, {
+                    code: `alert('No backend URL configured to decode selected text. Set it in extension options.');`,
+                });
+            }
+            // Stop the chain by returning a rejected promise
+            return Promise.reject(err);
         })
         .then((res) => {
             console.log('Response status:', res.status);
